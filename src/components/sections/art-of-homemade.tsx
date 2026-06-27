@@ -5,7 +5,7 @@ const steps = [
   {
     n: "01",
     title: "Des ingrédients d'exception",
-    text: "Beurre AOP, Sucre maîtrisé, chocolats de grands crus, fruits de saison sélectionnés chaque matin. La qualité commence à la source.",
+    text: "Beurre AOP, sucre maîtrisé, chocolats de grands crus, fruits de saison sélectionnés chaque matin. La qualité commence à la source.",
   },
   {
     n: "02",
