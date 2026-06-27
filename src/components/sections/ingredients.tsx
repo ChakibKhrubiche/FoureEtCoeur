@@ -7,7 +7,7 @@ import { Reveal } from "@/components/animations/reveal";
 
 const pillars = [
   { title: "Beurre AOP", text: "Pour des feuilletages d'une finesse incomparable." },
-  { title: "Vanille de Madagascar", text: "Gousses entières infusées, jamais d'arôme." },
+  { title: "Moins de sucre, plus d'émotion", text: "Des créations pensées pour laisser s'exprimer pleinement le beurre, le chocolat, les fruits et les épices, sans excès de sucre." },
   { title: "Chocolats grands crus", text: "Sélectionnés pour leur intensité et leur rondeur." },
   { title: "Fruits de saison", text: "Choisis chaque matin, au sommet de leur maturité." },
 ];

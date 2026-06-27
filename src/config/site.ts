@@ -16,7 +16,7 @@ export const siteConfig = {
   // TVA applicable (Maroc) — à ajuster selon produit/réglementation
   vatRate: 0.1,
   contact: {
-    email: "contact@foure-coeur.com",
+    email: "contact@fouretcoeur.ma",
     phone: "+212 6 33 77 48 86",
     address: "Casablanca, Maroc",
   },
