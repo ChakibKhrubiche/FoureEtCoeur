@@ -1,0 +1,377 @@
+// ============================================================
+//  Foure & Coeur — Schéma de base de données (Prisma + PostgreSQL/Neon)
+// ============================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ------------------------------------------------------------
+//  Enums
+// ------------------------------------------------------------
+
+enum Role {
+  CUSTOMER
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING // en attente
+  CONFIRMED // confirmée
+  PREPARING // en préparation
+  READY // prête
+  OUT_FOR_DELIVERY // en livraison
+  DELIVERED // livrée
+  CANCELLED // annulée
+}
+
+enum PaymentMethod {
+  CASH_ON_DELIVERY
+  STRIPE
+  PAYPAL
+}
+
+enum PaymentStatus {
+  UNPAID
+  PAID
+  REFUNDED
+  FAILED
+}
+
+enum ProductBadge {
+  NEW
+  BEST_SELLER
+  LIMITED_EDITION
+}
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED
+}
+
+// ------------------------------------------------------------
+//  Utilisateurs & authentification (Auth.js compatible)
+// ------------------------------------------------------------
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  passwordHash  String? // null si OAuth uniquement
+  phone         String?
+  role          Role      @default(CUSTOMER)
+
+  // Préférences & notifications
+  newsletterOptIn Boolean @default(false)
+  preferences     Json? // préférences libres (clé/valeur)
+
+  accounts  Account[]
+  sessions  Session[]
+  addresses Address[]
+  orders    Order[]
+  favorites Favorite[]
+  reviews   Review[]
+  cart      Cart?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([role])
+}
+
+// Auth.js — comptes OAuth
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+// Auth.js — sessions
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// Auth.js — vérification e-mail / tokens
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ------------------------------------------------------------
+//  Adresses
+// ------------------------------------------------------------
+
+model Address {
+  id         String  @id @default(cuid())
+  userId     String
+  label      String? // ex: "Domicile", "Bureau"
+  fullName   String
+  phone      String
+  line1      String
+  line2      String?
+  city       String
+  postalCode String?
+  country    String  @default("Maroc")
+  isDefault  Boolean @default(false)
+
+  user            User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ordersShipping  Order[] @relation("ShippingAddress")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+// ------------------------------------------------------------
+//  Catalogue : catégories & produits
+// ------------------------------------------------------------
+
+model Category {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String?
+  image       String?
+  position    Int     @default(0) // ordre d'affichage
+
+  products Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Product {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String  @db.Text
+  // Prix en centimes de MAD pour éviter les flottants (ex: 12000 = 120,00 MAD)
+  price       Int
+  compareAtPrice Int? // prix barré éventuel
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  // Médias
+  images String[] // URLs (premier = principal)
+
+  // Caractéristiques produit
+  weightGrams Int?
+  allergens   String[] // ex: ["Gluten", "Fruits à coque"]
+  ingredients String[]
+
+  // Stock & disponibilité
+  stock     Int     @default(0)
+  isActive  Boolean @default(true)
+
+  badge ProductBadge?
+
+  favorites  Favorite[]
+  reviews    Review[]
+  orderItems OrderItem[]
+
+  // Note moyenne dénormalisée (recalculée à chaque avis)
+  ratingAvg   Float @default(0)
+  ratingCount Int   @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([categoryId])
+  @@index([isActive])
+  @@index([badge])
+}
+
+// ------------------------------------------------------------
+//  Favoris & avis
+// ------------------------------------------------------------
+
+model Favorite {
+  id        String @id @default(cuid())
+  userId    String
+  productId String
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, productId])
+  @@index([userId])
+  @@index([productId])
+}
+
+model Review {
+  id        String  @id @default(cuid())
+  userId    String
+  productId String
+  rating    Int // 1 à 5
+  title     String?
+  comment   String? @db.Text
+  isApproved Boolean @default(true)
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, productId]) // un avis par utilisateur et produit
+  @@index([productId])
+}
+
+// ------------------------------------------------------------
+//  Panier (sauvegardé par utilisateur)
+// ------------------------------------------------------------
+
+model Cart {
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  items CartItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CartItem {
+  id        String @id @default(cuid())
+  cartId    String
+  productId String
+  quantity  Int    @default(1)
+
+  cart Cart @relation(fields: [cartId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([cartId, productId])
+  @@index([cartId])
+}
+
+// ------------------------------------------------------------
+//  Commandes
+// ------------------------------------------------------------
+
+model Order {
+  id          String @id @default(cuid())
+  orderNumber String @unique // ex: FC-2026-0001
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  // Coordonnées capturées au moment de la commande (snapshot)
+  customerName  String
+  customerEmail String
+  customerPhone String
+
+  shippingAddressId String?
+  shippingAddress   Address? @relation("ShippingAddress", fields: [shippingAddressId], references: [id], onDelete: SetNull)
+  // Snapshot textuel de l'adresse (au cas où l'adresse est modifiée/supprimée ensuite)
+  shippingAddressText String?
+
+  status        OrderStatus   @default(PENDING)
+  paymentMethod PaymentMethod @default(CASH_ON_DELIVERY)
+  paymentStatus PaymentStatus @default(UNPAID)
+
+  // Montants en centimes de MAD
+  subtotal     Int
+  discount     Int @default(0)
+  shippingCost Int @default(0)
+  taxAmount    Int @default(0)
+  total        Int
+
+  couponId String?
+  coupon   Coupon? @relation(fields: [couponId], references: [id], onDelete: SetNull)
+
+  notes String? @db.Text
+
+  // Suivi de la notification WhatsApp
+  whatsappSentAt DateTime?
+
+  items OrderItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id        String @id @default(cuid())
+  orderId   String
+  productId String?
+
+  // Snapshot du produit au moment de l'achat
+  productName String
+  unitPrice   Int // centimes MAD
+  quantity    Int
+  lineTotal   Int // unitPrice * quantity
+
+  order   Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+// ------------------------------------------------------------
+//  Codes promo
+// ------------------------------------------------------------
+
+model Coupon {
+  id           String       @id @default(cuid())
+  code         String       @unique
+  description  String?
+  discountType DiscountType
+  // valeur : pourcentage (0-100) ou montant fixe en centimes MAD
+  discountValue Int
+  minSubtotal  Int? // sous-total minimum requis (centimes MAD)
+  maxUses      Int? // null = illimité
+  usedCount    Int          @default(0)
+  isActive     Boolean      @default(true)
+  startsAt     DateTime?
+  expiresAt    DateTime?
+
+  orders Order[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isActive])
+}

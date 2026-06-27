@@ -1,0 +1,378 @@
+Numéro whatsapp : 0633774886
+
+/* *********************************************** */
+Nom : Gâteau chocolat
+
+Prix : 
+
+Prefix Fichier(s) : GateauxChocolat
+
+Description :
+Un gâteau chocolat moelleux, garni d’une ganache onctueuse, enrobé d’un chocolat rocher aux éclats d’amandes.
+Au sommet, un irrésistible croquant praliné amande–noisette, décoré avec élégance de ganache
+
+Un parfait équilibre entre fondant, croquant et intensité chocolatée…
+À savourer en famille, entre amis, ou simplement pour se faire plaisir.
+
+/* *********************************************** */
+Nom : Brownies ultra gourmands
+
+Prix : 999 MAD
+
+Prefix Fichier(s) : Pack_brownies_UltraGourmants 
+
+Description :
+
+Nouveauté signée Four & Cœur
+Découvrez nos brownies ultra gourmands, généreusement garnis de :
+Crème noisette
+Pistache kunafa
+Spéculos croustillant
+Chocolat intense
+
+Disponibles en boîte de 12 (standard) ou boîte de 16 (mini-bites), parfaites pour :
+accompagner votre café au travail
+partager entre collègues ou amis
+
+Fraîchement faits maison, sans industriel – juste du pur plaisir
+
+/* *********************************************** */
+Nom : Gâteau cœur fondant au citron
+
+Prix : 999 MAD
+
+Prefix Fichier(s) : Gâteau_cœur_fondant_au citron
+
+Description :
+
+Gâteau de voyage, cœur fondant au citron, habillé d’un croquant chocolat blanc pistache…
+
+Une bouchée et c’est la promesse du fondant, du croustillant et de la fraîcheur citronnée
+
+/* *********************************************** */
+
+Nom : Boxe de 12 mini cookies garnis
+
+Prix : 139 MAD
+
+Prefix Fichier(s) : Cookies_garnis
+
+Description :
+
+Les cookies garnis signés Four & Cœur reviennent en force !
+Au menu : Red Velvet, Spéculos, Chocolat, Pistache & New Yorkais
+Vendus à la pièce — parfaits pour une pause plaisir bien méritée
+
+/* *********************************************** */
+Nom : Feuilletée amande  
+
+Prix : 220 MAD
+
+Prefix Fichier(s) : Croustillant_amande
+
+Description :
+
+Un croustillant amande à la texture irrésistible
+Une pâte délicatement croustillante,
+un cœur fondant aux amandes ,
+et ce léger éclat salé qui vient sublimer chaque bouchée
+À savourer, à partager… ou à garder rien que pour soi
+
+/* *********************************************** */
+Nom : Konafa au fromage 
+
+Prix : 999 MAD
+
+Prefix Fichier(s) : Konafa_au_fromage
+
+Description :
+
+Préparée avec une cream cheese maison
+Délicatement parfumée aux fleurs d’oranger
+
+Moins sucrée
+Sans sucre ajouté
+Décorée aux amandes & pistaches
+
+Une douceur équilibrée, fondante et raffinée, pensée pour sublimer vos soirées
+
+/* *********************************************** */
+Nom : Box Goûter Scolaire 
+
+Prix : 999 MAD
+
+Prefix Fichier(s) : Box_Goûter_Scolaire
+
+Description :
+
+Facilitez vos matinées et offrez une semaine de douceurs maison à vos enfants.
+Notre box spéciale rentrée est pensée pour les petits gourmands et pour soulager les mamans :
+
+12 mini cookies (chocolat & new-yorkais)
+12 madeleines enrobées (chocolat blanc & noir)
+11 brioches moelleuses fourrées au chocolat
+
+Une box = une semaine de goûters déjà prêts, variés et faits maison avec amour.
+
+Réservez dès maintenant votre box et profitez d’un goûter qui fait sourire les enfants… et gagner du temps aux parents !
+
+/* *********************************************** */
+Nom : Madeleines enrobées chocolat 
+
+Prix : 999 MAD
+
+Prefix Fichier(s) : Madeleines_chocolat
+
+Description :
+
+Craquez pour nos madeleines pur beurre, enrobées d’un chocolat fondant !
+
+Chaque bouchée est une petite dose de bonheur…
+
+À l’unité ou en boîte personnalisée, choisissez selon vos envies et votre gourmandise.
+
+/* *********************************************** */
+Nom : Granola 100% fait maison
+
+Prix : 999 MAD
+
+Prefix Fichier(s) : Granola
+
+Description :
+
+Granola 100% fait maison, croquant & plein d’énergie 
+Healthy, gourmand & sans compromis… Un bol de bonheur croustillant pour bien commencer la journée
+Des ingrédients simples & sains, pour une dose d’énergie naturelle :
+• Sans sucres raffinés 
+• Plein de fibres & bons nutriments 
+• Avoine, fruits secs, graines, huile de coco & miel 
+• Parfait pour le petit-déj ou en snack rapide 
+
+Disponible en :
+• 250g → 50 dhs
+• 500g → 80 dhs
+
+/* *********************************************** */
+Nom : Mini cannelés maison
+
+
+Prix : 999 MAD
+
+Prefix Fichier(s) : Mini_cannelés_maison
+
+Description :
+
+Croustillants à l’extérieur, tendres et fondants à l’intérieur…
+Ces petits trésors caramélisés sont préparés avec patience, amour et une touche de vanille.
+
+À picorer, à partager (ou pas 😉), pour accompagner un café ou sublimer un goûter.
+
+Chez Four & Cœur, chaque détail compte — même en format mini
+
+/* *********************************************** */
+Nom : Plateau salé
+
+
+Prix : 270
+
+Prefix Fichier(s) : Plateau_salé
+
+Description :
+
+Un plateau salé qui met tout le monde d’accord 
+Composé selon vos envies et vos goûts du moment :
+
+ Pizza –  Tacos –  Burger –  Quiche
+ Wrap –  Verrine salée –  Mini sandwich
+
+Déclinés avec amour  en version :
+ Thon –  Saumon –  Poulet –  Viande hachée –  Épinards
+
+Idéal pour un goûter entre amis, une pause au bureau, un brunch ou un apéro dînatoire.
+
+Disponible sur commande – personnalisable à souhait 
+
+/* *********************************************** */
+Nom : Basboussa CheeseCake 
+
+Prix : 220 MAD
+
+Prefix Fichier(s) : Basboussa_CheeseCake 
+
+Description :
+
+ Base croustillante au biscuit beurré et crème fraîche
+Cœur cheesecake ultra fondant au cream cheese, lait concentré sucré et une touche d’amande
+Basboussa moelleuse à la semoule, parfumée à la fleur d’oranger et délicatement imbibée d’un sirop maison au caramel
+Et pour la touche finale : amandes effilées, pistaches concassées & pétales de rose
+
+Un dessert signature, crémeux, fondant, croquant, et surtout… inoubliable.
+
+/* *********************************************** */
+Nom : Boxe de 4 cinnamon roll 
+
+Prix : 105 MAD
+
+Prefix Fichier(s) : cinnamon_roll
+
+
+Description :
+Un tourbillon de douceur vient de rejoindre la famille Four & Cœur…
+
+Voici notre cinnamon roll maison,
+généreusement roulé à la cannelle,
+puis nappé de sa crème cheesecake onctueuse
+
+Moelleux, fondant, réconfortant…
+il a tout pour faire chavirer les cœurs
+
+À savourer à la cuillère… ou avec les doigts (on ne juge pas 😉)
+
+
+/* *********************************************** */
+
+Nom : Cookies géant fourré
+
+Prix : 145 MAD
+
+Prefix Fichier(s) : Cookies_géant_fourré
+
+Description : 
+
+C’est doré. C’est crousti-fondant. Et ça sort tout juste du four.
+Spoiler : il fond. Il craque. Il rend accroc.
+
+Fait maison avec amour.
+
+
+/* *********************************************** */
+Nom : 12 mini cookies
+
+Prix : 100 MAD
+
+Prefix Fichier(s) : 12_mini_cookies
+
+Description : 
+
+Nouveau format goûter – Cookies tout doux pour petits cœurs 
+
+Pour faciliter les goûters de la semaine, Four & Cœur propose désormais ses cookies réduits en sucre dans un sachet pratique de 12 pièces, spécialement pensés pour les enfants.
+
+Parfaits à glisser dans la boîte à goûter ou à partager à la maison
+Moins sucrés, mais toujours moelleux et faits maison
+Ingrédients simples, goût tout doux et réconfortant
+
+Contenu du sachet (x12 mini cookies) :
+✔️ Pépites de chocolat blanc
+✔️ Pépites de chocolat Noir
+✔️ Noix
+✔️ Cacahuètes
+
+
+Prêts à croquer, tout en douceur.
+
+Idéal pour les mamans organisées ou les petits gourmands
+
+/* *********************************************** */
+Nom : Tressée Fondante
+
+Prix : 120 MAD
+
+Prefix Fichier(s) : Tressée_Fondante
+
+Description : 
+
+Une brioche moelleuse, délicatement tressée à la main, à la mie filante et au parfum tout juste irrésistible.
+
+À l’intérieur : un cœur généreux de chocolat fondant et de caramel doré, fait maison. Chaque bouchée est un doux mélange de réconfort, de tendresse et de gourmandise.
+
+Parfaite pour le petit-déjeuner, le goûter… ou juste pour se faire plaisir.
+
+/* *********************************************** */
+
+Nom : Boxe de 12 mini brownies
+
+Prix : 95 MAD
+
+Prefix Fichier(s) : Pack_Brownie
+
+Description:
+
+Voici notre tout nouveau brownie fondant, une petite bombe de douceur au chocolat intense et au pur beurre, préparé avec amour, comme toujours.
+
+Moins sucré que la version classique, mais mille fois plus fondant… chaque bouchée révèle des pépites de chocolat noir fondantes et le croquant délicat de noix légèrement toastées.
+
+C’est la recette parfaite pour les vrais amoureux du chocolat, ceux qui aiment le goût brut, riche, généreux — sans l’excès de sucre.
+
+/* *********************************************** */
+Nom : plateau salé 48
+
+Prix : 999 MAD
+
+Prefix Fichier(s) : plateau_salé_48
+
+Description : 
+
+Découvrez notre plateau salé varié :
+✔️ 48 pièces soigneusement préparées
+✔️ Pâtes 100 % faites maison
+✔️ Zéro charcuterie industrielle
+✔️ Pas de thon en conserve
+✔️ Pur beurre uniquement
+✔️ Des ingrédients bruts et naturels, rien d’artificiel
+
+Au menu :
+Mini quiches
+Feuilletés dorés
+Pastillas fines
+Bébé sandwichs moelleux
+Mini burgers savoureux
+Mini tacos
+Cigares croustillants
+Éclairs au saumon (fondants et gourmands)
+
+Parfait pour vos brunchs, apéros, événements ou pauses gourmandes
+
+/* *********************************************** */
+Nom : Boxe de 12 Muffins variés
+
+Prix : 195 MAD
+
+Prefix Fichier(s) : Pack_muffins
+
+Description : 
+Chez Four & Cœur, le muffin n’est pas un simple gâteau. C’est un nuage moelleux, généreux, fait maison avec des ingrédients soigneusement choisis.
+
+Citron & cœur de lemon curd
+Chocolat fondant
+Fruit rouge éclatant
+Crumble aux noix et Caramel coulant
+
+Des saveurs qui réconfortent, des formats qui rassasient, et toujours cette touche d’amour qui fait la différence.
+
+
+
+/* *********************************************** */
+Nom : Cookie  Choco Caramel
+
+Prix : 19 MAD
+
+Prefix Fichier(s) : Cookie _Choco_Caramel
+
+Description : 
+
+Chez Four & Cœur, on fait les choses simplement… mais avec amour.
+Pas de mélange industriel, pas de raccourci.
+Juste des ingrédients de base, de qualité, travaillés à la main, avec patience.
+
+Voici notre cookie signature :
+Choco & Caramel Cœur
+Un cookie moelleux, généreusement garni de :
+• Caramel au beurre salé maison
+• Ganache chocolat noir fondante, préparée sur place
+Le tout niché dans une pâte faite avec des œufs, du vrai beurre, et de la farine de qualité.
+
+Un seul objectif : retrouver le goût de l’essentiel, du vrai, du fait maison.
+
+
+

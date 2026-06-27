@@ -1,0 +1,158 @@
+
+<style>
+#erd svg { width: 100%; }
+</style>
+<div id="erd"></div>
+<script type="module">
+import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+await document.fonts.ready;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  fontFamily: '"Anthropic Sans", sans-serif',
+  themeVariables: {
+    darkMode: dark,
+    fontSize: '12px',
+    fontFamily: '"Anthropic Sans", sans-serif',
+    lineColor: dark ? '#9c9a92' : '#73726c',
+    textColor: dark ? '#c2c0b6' : '#3d3d3a',
+  },
+});
+const diagram = `erDiagram
+  User ||--o{ Order : "passe"
+  User ||--o{ Favorite : "sauvegarde"
+  User ||--o{ Review : "rédige"
+  User ||--o{ Address : "possède"
+  User ||--o{ CartItem : "a dans panier"
+  Order ||--|{ OrderItem : "contient"
+  Order }o--o| Coupon : "utilise"
+  Order }o--|| Address : "livré à"
+  Product ||--o{ OrderItem : "inclus dans"
+  Product ||--o{ Favorite : "favori de"
+  Product ||--o{ Review : "reçoit"
+  Product ||--o{ CartItem : "dans panier"
+  Product }o--|| Category : "appartient à"
+  Admin ||--o{ Product : "gère"
+  Admin ||--o{ Order : "traite"
+
+  User {
+    uuid id PK
+    string clerkId UK
+    string email UK
+    string name
+    string phone
+    enum role
+    timestamp createdAt
+  }
+  Product {
+    uuid id PK
+    string name
+    string slug UK
+    text description
+    decimal price
+    int stock
+    string[] images
+    string[] allergens
+    string[] ingredients
+    decimal weight
+    enum badge
+    float rating
+    bool isActive
+    uuid categoryId FK
+  }
+  Category {
+    uuid id PK
+    string name
+    string slug UK
+    string image
+    int sortOrder
+  }
+  Order {
+    uuid id PK
+    string orderNumber UK
+    enum status
+    decimal subtotal
+    decimal tax
+    decimal shipping
+    decimal total
+    uuid userId FK
+    uuid addressId FK
+    uuid couponId FK
+    timestamp createdAt
+  }
+  OrderItem {
+    uuid id PK
+    int quantity
+    decimal unitPrice
+    uuid orderId FK
+    uuid productId FK
+  }
+  Address {
+    uuid id PK
+    string label
+    string street
+    string city
+    string zip
+    string country
+    bool isDefault
+    uuid userId FK
+  }
+  Review {
+    uuid id PK
+    int rating
+    text comment
+    bool isVerified
+    uuid userId FK
+    uuid productId FK
+  }
+  Favorite {
+    uuid id PK
+    uuid userId FK
+    uuid productId FK
+  }
+  CartItem {
+    uuid id PK
+    int quantity
+    uuid userId FK
+    uuid productId FK
+  }
+  Coupon {
+    uuid id PK
+    string code UK
+    enum type
+    decimal value
+    int maxUses
+    int usedCount
+    timestamp expiresAt
+  }
+  Admin {
+    uuid id PK
+    string email UK
+    string passwordHash
+    enum role
+    timestamp lastLogin
+  }
+`;
+const { svg } = await mermaid.render('erd-svg', diagram);
+document.getElementById('erd').innerHTML = svg;
+document.querySelectorAll('#erd svg .node').forEach(node => {
+  const firstPath = node.querySelector('path[d]');
+  if (!firstPath) return;
+  const d = firstPath.getAttribute('d');
+  const nums = d.match(/-?[\d.]+/g)?.map(Number);
+  if (!nums || nums.length < 8) return;
+  const xs = [nums[0], nums[2], nums[4], nums[6]];
+  const ys = [nums[1], nums[3], nums[5], nums[7]];
+  const x = Math.min(...xs), y = Math.min(...ys);
+  const w = Math.max(...xs) - x, h = Math.max(...ys) - y;
+  const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', x); rect.setAttribute('y', y);
+  rect.setAttribute('width', w); rect.setAttribute('height', h);
+  rect.setAttribute('rx', '8');
+  for (const a of ['fill', 'stroke', 'stroke-width', 'class', 'style']) {
+    if (firstPath.hasAttribute(a)) rect.setAttribute(a, firstPath.getAttribute(a));
+  }
+  firstPath.replaceWith(rect);
+});
+</script>

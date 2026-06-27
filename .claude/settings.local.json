@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p docs)",
+      "Bash(mv \"Cahier de charge.docx\" \"RetourClaudeCode_SurAnalyseCahierCharge.docx\" \"Stop Letting Claude Build AI Slop - The 5-Tool Stack for Studio-Grade Landing Pages.html\" \"Stop Letting Claude Build AI Slop - The 5-Tool Stack for Studio-Grade Landing Pages_files\" foure_coeur_architecture.png foure_coeur_erd.html foure_coeur_plan_execution.html Prompt_Initial.txt docs/)",
+      "Bash(rm -f '~$hier de charge.docx' '~$tourClaudeCode_SurAnalyseCahierCharge.docx')",
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --app --src-dir --eslint --import-alias \"@/*\" --use-npm --no-turbopack --yes)",
+      "Bash(npx --yes create-next-app@latest foure-coeur-web --typescript --tailwind --app --src-dir --eslint --import-alias \"@/*\" --use-npm --no-turbopack --yes)",
+      "Bash(npm config *)",
+      "Bash(npm install *)",
+      "Bash(npx --yes shadcn@latest add button card input label textarea select badge separator sheet dialog dropdown-menu accordion tabs avatar sonner skeleton form -y)",
+      "Bash(npx --yes shadcn@latest add form -y)",
+      "Bash(npx --yes shadcn@latest add form -y --overwrite)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(npm run *)",
+      "Bash(npx prisma *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(tee /tmp/fc-imggen.log)",
+      "Bash(curl -s \"http://localhost:3000/catalogue?categorie=macarons\")",
+      "Bash(curl -s \"http://localhost:3000/catalogue?q=chocolat\")",
+      "Bash(node -e \"console.log\\(require\\('crypto'\\).randomBytes\\(32\\).toString\\('base64'\\)\\)\")",
+      "Bash(npx tsx *)",
+      "Bash(mv -f box-12-mini-brownies.png box-12-mini-brownies.jpg)",
+      "Bash(echo \"brownies: $?\")",
+      "Bash(rm -f coffret-macarons.jpg cookie-chocolat.jpg cookie-pecan.jpg croissant.jpg entremets-chocolat.jpg fraisier.jpg macaron-pistache.jpg pain-au-chocolat.jpg paris-brest.jpg saint-honore.jpg tarte-citron.jpg tarte-fruits.jpg)",
+      "Bash(echo \"cleanup: $?\")",
+      "Read(//c/Chakib/Perso/Coding/SAAS/FoureEtCoeur/**)",
+      "Bash(curl -s -I \"http://localhost:3000/images/hero/hero-main.jpg\")",
+      "Bash(curl -s -I \"http://localhost:3000/images/products/box-gouter-scolaire.jpg\")",
+      "Bash(curl -s -I \"http://localhost:3000/_next/image?url=%2Fimages%2Fhero%2Fhero-main.jpg&w=1920&q=75\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:3000/_next/image?url=%2Fimages%2Fhero%2Fhero-main.jpg%3Fv%3D3&w=1920&q=75\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:3000/_next/image?url=%2Fimages%2Fbrand%2Flogo.jpg%3Fv%3D3&w=128&q=75\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:3000/_next/image?url=%2Fimages%2Fproducts%2Fbox-gouter-scolaire.jpg%3Fv%3D3&w=640&q=75\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:3000/_next/image?url=%2Fimages%2Fhero%2Fhero-main.jpg&w=1920&q=75\")",
+      "Bash(curl -s \"http://localhost:3000/_next/image?url=%2Fimages%2Fhero%2Fhero-main.jpg%3Fv%3D3&w=1920&q=75\" -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:3000/_next/image?url=%2Fimages%2Fhero%2Fhero-main.jpg%3Fv%3D3&w=1920&q=75\")",
+      "Bash(taskkill //F //IM node.exe //T)"
+    ]
+  }
+}

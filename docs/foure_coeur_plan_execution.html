@@ -1,0 +1,151 @@
+
+<style>
+.phase-wrap { padding: 8px 0; }
+.phase { border-left: 3px solid; padding: 14px 16px; margin-bottom: 10px; border-radius: 0 8px 8px 0; }
+.phase-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+.phase-num { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+.phase-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+.phase-dur { font-size: 12px; color: var(--color-text-secondary); margin-left: auto; white-space: nowrap; }
+.phase-tasks { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.phase-tasks li { font-size: 12px; color: var(--color-text-secondary); background: var(--color-background-secondary); border: 1px solid var(--color-border-tertiary); padding: 3px 10px; border-radius: 20px; }
+.p1 { border-color: #534AB7; background: #EEEDFE22; }
+.p1 .phase-num { background: #EEEDFE; color: #3C3489; }
+.p2 { border-color: #0F6E56; background: #E1F5EE22; }
+.p2 .phase-num { background: #E1F5EE; color: #085041; }
+.p3 { border-color: #BA7517; background: #FAEEDA22; }
+.p3 .phase-num { background: #FAEEDA; color: #633806; }
+.p4 { border-color: #993C1D; background: #FAECE722; }
+.p4 .phase-num { background: #FAECE7; color: #4A1B0C; }
+.p5 { border-color: #185FA5; background: #E6F1FB22; }
+.p5 .phase-num { background: #E6F1FB; color: #0C447C; }
+.p6 { border-color: #3B6D11; background: #EAF3DE22; }
+.p6 .phase-num { background: #EAF3DE; color: #173404; }
+.p7 { border-color: #993556; background: #FBEAF022; }
+.p7 .phase-num { background: #FBEAF0; color: #4B1528; }
+.p8 { border-color: #5F5E5A; background: #F1EFE822; }
+.p8 .phase-num { background: #F1EFE8; color: #2C2C2A; }
+@media (prefers-color-scheme: dark) {
+  .p1 { background: #26215C33; } .p1 .phase-num { background: #26215C; color: #CECBF6; }
+  .p2 { background: #04342C33; } .p2 .phase-num { background: #04342C; color: #9FE1CB; }
+  .p3 { background: #41240233; } .p3 .phase-num { background: #412402; color: #FAC775; }
+  .p4 { background: #4A1B0C33; } .p4 .phase-num { background: #4A1B0C; color: #F5C4B3; }
+  .p5 { background: #042C5333; } .p5 .phase-num { background: #042C53; color: #B5D4F4; }
+  .p6 { background: #17340433; } .p6 .phase-num { background: #173404; color: #C0DD97; }
+  .p7 { background: #4B152833; } .p7 .phase-num { background: #4B1528; color: #F4C0D1; }
+  .p8 { background: #2C2C2A33; } .p8 .phase-num { background: #2C2C2A; color: #D3D1C7; }
+}
+</style>
+<div class="phase-wrap">
+
+<div class="phase p1">
+  <div class="phase-header">
+    <span class="phase-num">Phase 1</span>
+    <span class="phase-title">Fondations & infrastructure</span>
+    <span class="phase-dur">Semaine 1</span>
+  </div>
+  <ul class="phase-tasks">
+    <li>Init Next.js 15 + TypeScript</li><li>TailwindCSS + shadcn/ui</li><li>Neon DB + Prisma schema</li>
+    <li>Clerk Auth + middleware RBAC</li><li>Structure dossiers (features/hooks/lib)</li>
+    <li>Variables ENV + Vercel project</li><li>GitHub Actions CI/CD</li><li>Sentry setup</li>
+  </ul>
+</div>
+
+<div class="phase p2">
+  <div class="phase-header">
+    <span class="phase-num">Phase 2</span>
+    <span class="phase-title">Identité visuelle & design system</span>
+    <span class="phase-dur">Semaine 1–2</span>
+  </div>
+  <ul class="phase-tasks">
+    <li>Palette tokens (crème, beige, chocolat, doré)</li><li>Typographies (Google Fonts)</li>
+    <li>Composants de base (Button, Card, Badge)</li><li>Animations globales Framer Motion</li>
+    <li>Lenis smooth scroll</li><li>Cursor personnalisé</li><li>Page transitions</li>
+    <li>Loader premium</li>
+  </ul>
+</div>
+
+<div class="phase p3">
+  <div class="phase-header">
+    <span class="phase-num">Phase 3</span>
+    <span class="phase-title">Page d'accueil & pages statiques</span>
+    <span class="phase-dur">Semaine 2–3</span>
+  </div>
+  <ul class="phase-tasks">
+    <li>Hero animé GSAP + parallax</li><li>Scroll storytelling</li><li>Section produits populaires</li>
+    <li>Section valeurs + artisanat</li><li>Galerie animée</li><li>Avis clients</li>
+    <li>Footer premium</li><li>Pages À propos / FAQ / CGV / Confidentialité</li>
+  </ul>
+</div>
+
+<div class="phase p4">
+  <div class="phase-header">
+    <span class="phase-num">Phase 4</span>
+    <span class="phase-title">Catalogue & fiche produit</span>
+    <span class="phase-dur">Semaine 3–4</span>
+  </div>
+  <ul class="phase-tasks">
+    <li>API produits (TanStack Query)</li><li>Filtres + tri + recherche instantanée</li>
+    <li>Cards produits animées</li><li>Galerie zoom fiche produit</li>
+    <li>Badges (nouveau / best seller / édition limitée)</li>
+    <li>Avis & notation</li><li>Produits similaires</li><li>Cloudinary image pipeline</li>
+  </ul>
+</div>
+
+<div class="phase p5">
+  <div class="phase-header">
+    <span class="phase-num">Phase 5</span>
+    <span class="phase-title">Compte utilisateur & panier</span>
+    <span class="phase-dur">Semaine 4–5</span>
+  </div>
+  <ul class="phase-tasks">
+    <li>Profil utilisateur + adresses multiples</li><li>Favoris (Zustand + DB sync)</li>
+    <li>Panier persistant (DB + guest)</li><li>Gestion quantités</li>
+    <li>Codes promo</li><li>Calcul taxes + livraison</li>
+    <li>Historique commandes</li><li>Notifications préférences</li>
+  </ul>
+</div>
+
+<div class="phase p6">
+  <div class="phase-header">
+    <span class="phase-num">Phase 6</span>
+    <span class="phase-title">Commandes, paiement & notifications</span>
+    <span class="phase-dur">Semaine 5–6</span>
+  </div>
+  <ul class="phase-tasks">
+    <li>Tunnel de paiement (architecture PaymentProvider)</li><li>Création commande + stock MAJ</li>
+    <li>Email confirmation (Resend + React Email)</li>
+    <li>WhatsApp Business notification automatique</li>
+    <li>Page confirmation de commande</li><li>Rate limiting Upstash</li>
+    <li>Validation Zod end-to-end</li>
+  </ul>
+</div>
+
+<div class="phase p7">
+  <div class="phase-header">
+    <span class="phase-num">Phase 7</span>
+    <span class="phase-title">Dashboard administrateur</span>
+    <span class="phase-dur">Semaine 6–7</span>
+  </div>
+  <ul class="phase-tasks">
+    <li>Auth admin (RBAC séparé)</li><li>CRUD produits + images Cloudinary</li>
+    <li>Gestion catégories</li><li>Gestion commandes + statuts</li>
+    <li>Gestion utilisateurs</li><li>Statistiques + graphiques (Recharts)</li>
+    <li>Export CSV</li><li>Recherche + filtres + pagination</li>
+  </ul>
+</div>
+
+<div class="phase p8">
+  <div class="phase-header">
+    <span class="phase-num">Phase 8</span>
+    <span class="phase-title">PWA, SEO, performance & production</span>
+    <span class="phase-dur">Semaine 7–8</span>
+  </div>
+  <ul class="phase-tasks">
+    <li>PWA manifest + Service Worker</li><li>Notifications push</li><li>Mode offline partiel</li>
+    <li>Metadata + OpenGraph + JSON-LD</li><li>Sitemap + robots.txt</li>
+    <li>Audit Lighthouse (objectif &gt;95)</li><li>Tests E2E (Playwright)</li>
+    <li>README + documentation ENV</li><li>Go live Vercel production</li>
+  </ul>
+</div>
+
+</div>
