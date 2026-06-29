@@ -29,6 +29,9 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // L'espace admin a son propre chrome.
+  if (pathname?.startsWith("/admin")) return null;
+
   return (
     <header
       className={cn(

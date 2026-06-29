@@ -40,7 +40,7 @@ Nom de marque officiel : **Four & Cœur** — « Douceurs faites maison » (logo
 - [x] **Phase 4 — Auth & espace client** (favoris persistés ; avis en écriture à brancher plus tard)
 - [x] **Phase 5 — Panier & commande** (COD ; WhatsApp + e-mail branchés en Phase 6)
 - [ ] **Phase 6 — Intégrations (WhatsApp, e-mails, stock)**
-- [ ] **Phase 7 — Dashboard admin**
+- [x] **Phase 7 — Dashboard admin** (CRUD produits/catégories, commandes + statut, users, stats/graphique, export CSV)
 - [ ] **Phase 8 — Finition (SEO, PWA, perf, sécurité, déploiement)**
 
 ---
