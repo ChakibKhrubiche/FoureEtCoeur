@@ -21,8 +21,8 @@ export const siteConfig = {
     address: "Casablanca, Maroc",
   },
   social: {
-    instagram: "https://instagram.com/foure.coeur",
-    facebook: "https://facebook.com/foure.coeur",
+    instagram: "https://www.instagram.com/four.et.coeur/",
+    facebook: "https://web.facebook.com/profile.php?id=61581025010907#",
     pinterest: "https://pinterest.com/foure.coeur",
   },
 } as const;
