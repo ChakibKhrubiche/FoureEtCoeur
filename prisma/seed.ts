@@ -28,7 +28,7 @@ const categories = [
     position: 3,
   },
   {
-    name: "Viennoiseries & brioches",
+    name: "Brioches & viennoiseries",
     slug: "viennoiseries",
     description: "Brioches, madeleines, cannelés et douceurs du goûter.",
     image: "/images/products/tressee-fondante.jpg",
